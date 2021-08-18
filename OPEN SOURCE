@@ -1,0 +1,13 @@
+getgenv().collectAllCoins = true
+
+
+spawn(function()
+    while wait(0.3) do
+    if not getgenv().collectAllCoins then break end
+        for i,v in pairs(game.Workspace.CoinStuff:GetDescendants()) do
+            if v:IsA("MeshPart") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            end
+        end
+    end
+end)
